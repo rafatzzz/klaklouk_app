@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'package:klaklouk_app/components/custom_snackbar.dart';
+import 'package:klaklouk_app/components/custom_dialog.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -91,6 +93,13 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       isResultVisible = false;
       hasBet = false;
     });
+    CustomSnackbar(
+      context: context,
+      message: 'The game was reset',
+      icon: Icons.check_circle_outline,
+      backgroundColor: Colors.green,
+      duration: Duration(seconds: 4),
+    );
   }
 
   @override
@@ -131,7 +140,9 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                         style: const TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          CustomDialog(context);
+                        },
                         style: ElevatedButton.styleFrom(
                           shape: const CircleBorder(),
                           padding: const EdgeInsets.all(12),
