@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AlertMoney extends StatelessWidget {
-  const AlertMoney({super.key});
+class Ads extends StatelessWidget {
+  const Ads({super.key});
 
   @override
   Widget build(BuildContext context) {
